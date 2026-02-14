@@ -1,0 +1,29 @@
+# --- 安全性 (最重要) ---
+.env
+.env.local
+api_key.txt
+
+# --- Python 環境與編譯檔 ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+
+# --- 專案資料 (通常不進入版本控制) ---
+# 向量資料庫二進位檔 (很大且不需要版控)
+db/
+chroma_db/
+chroma.sqlite3
+
+# 原始資料 (看你需求，如果檔案不大可以留著，但通常建議忽略)
+# data/
+
+# --- IDE 設定檔 (不需要分享給別人) ---
+.vscode/
+.idea/
+.DS_Store

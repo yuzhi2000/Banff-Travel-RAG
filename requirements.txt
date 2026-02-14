@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchain-core
+langchain-openai
+langchain-google-genai
+langchain-chroma
+langchain-huggingface
+chromadb
+streamlit
+python-dotenv
+sentence-transformers
+pypdf
