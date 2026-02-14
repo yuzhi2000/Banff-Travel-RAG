@@ -61,16 +61,17 @@ A Retrieval-Augmented Generation (RAG) system designed for Banff National Park t
 
 ## 📂 Project Structure
 
+```text
 Banff-RAG/
-├── data/                   # 存放原始資料 (PDF, txt, md)
-├── db/                     # 存放向量資料庫 (ChromaDB persist directory)
+├── data/               # Raw knowledge source (Wikivoyage, Official Guides)
+├── db/                 # ChromaDB persistence directory
 ├── src/
-│   ├── ingestion.py        # ETL: 讀取資料 -> 切分 -> 向量化 -> 存入 DB
-│   ├── retrieval_test.py   # 測試檢索功能
-│   └── app_ui.py           # Streamlit UI & RAG Chain Logic
-├── .env                    # 存放 API Key
+│   ├── ingestion.py    # ETL Pipeline: Cleaning -> Chunking -> Embedding
+│   └── app_ui.py       # Streamlit UI & RAG Chain Logic
+├── .env                # API Keys (Not uploaded)
 ├── .gitignore
 └── requirements.txt
+
 
 ## 📝 Future Improvements
 * Implement Hybrid Search (BM25 + Dense Vector).
