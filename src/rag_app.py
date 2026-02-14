@@ -35,13 +35,9 @@ def main():
 
     # 4. 準備 LLM (使用 Gemini Pro)
     llm = ChatGoogleGenerativeAI(
-        model="gemini-3-flash-preview", # 使用最新的 Flash 模型，速度快且免費額度高
+        model="gemini-3-flash-preview", # 使用最新的 Flash 模型
         temperature=0,      # 設為 0 讓回答盡量根據事實，不要隨意發揮
     )
-
-    # MODEL_NAME = "gemini-3-flash-preview"
-    # MODEL_NAME = "gemini-2.5-flash"
-    # MODEL_NAME = "gemini-2.5-flash-lite"
 
     # 5. 設計 Prompt Template (提示詞模板)
     # 這是 RAG 的靈魂，告訴 LLM 只能根據 Context 回答
