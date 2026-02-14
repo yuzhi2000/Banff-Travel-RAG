@@ -27,7 +27,7 @@ A Retrieval-Augmented Generation (RAG) system designed for Banff National Park t
     * Converts user query to vector.
     * Retrieves Top-K relevant chunks via Cosine Similarity.
 3.  **Generation:**
-    * Feeds context + query to Gemini 1.5 Flash.
+    * Feeds context + query to gemini-3-flash-preview.
     * Streamlit renders the response and citations.
 
 ## 🛠️ Installation
