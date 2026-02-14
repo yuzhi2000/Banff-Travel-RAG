@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-# from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -11,7 +10,6 @@ def test_retrieval(query_text):
     print(f"--- 測試查詢: {query_text} ---")
     
     # 準備 Embedding Function
-    # embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     
     # 載入現有的資料庫
