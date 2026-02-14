@@ -36,16 +36,23 @@ def get_rag_chain():
 
     # D. Prompt Template
     template = """你是一個專業的班夫國家公園旅遊嚮導。
-    請根據以下的 Context 資訊回答使用者的問題。
-    如果 Context 裡沒有答案，請直接說「抱歉，根據目前的資料我無法回答這個問題」，不要編造資訊。
     
+    請遵循以下回答邏輯：
+    1. **優先使用 Context**：如果下方的 Context 包含回答問題所需的資訊，請直接引用 Context 回答，並盡量詳細。
+    2. **自有知識兜底**：如果 Context 裡 **完全沒有** 相關資訊，請使用你作為大型語言模型的自有知識來回答。
+    
+    ⚠️ **重要限制**：
+    - 如果你使用了自有知識（非 Context 內容），請在回答的開頭加上標註：**「(注意：以下資訊來自 AI 資料庫，非本次檢索結果，僅供參考)」**。
+    - 如果是關於具體數據（如票價、開放時間）且 Context 沒有，請誠實說不知道，不要瞎掰數字。
+
     Context:
     {context}
-    
+
     Question:
     {question}
-    
+
     Answer:"""
+    
     prompt = ChatPromptTemplate.from_template(template)
 
     # E. 構建 Chain (使用 RunnableParallel 來同時回傳答案與來源)
