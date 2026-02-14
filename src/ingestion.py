@@ -3,7 +3,6 @@ import re
 from dotenv import load_dotenv
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-# from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -51,7 +50,6 @@ def ingest_data():
     print(f"文字切分完成，共產生 {len(chunks)} 個 chunks")
 
     # 向量化與儲存
-    # embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     print("--- 載入本地 Embedding 模型 (第一次執行會下載模型檔，約 100MB) ---")
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     
